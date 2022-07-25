@@ -1,7 +1,9 @@
 const path = require("path");
 const webpack = require("webpack");
+const commonConfig = require('./webpack.common.js')
+const {merge} = require('webpack-merge')
 
-module.exports = {
+const prodConfig = {
   mode: 'production',
   // 入口
   entry: path.resolve(__dirname, '../src/index.js'),
@@ -15,4 +17,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify("production")
     })
   ]
-}
+};
+
+module.exports = merge(commonConfig, prodConfig)
+

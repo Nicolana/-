@@ -10,3 +10,6 @@ console.log("hello world!!!");
 console.log("test auto compile");
 helloWebpack("hunhunzhang", "asljdlajsd", "aldjsjdioiu");
 test.print();
+
+let a = null;
+console.log(a ?? "a is null");
